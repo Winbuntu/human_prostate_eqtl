@@ -15,6 +15,8 @@ for i in $(ls *.txt); do tr '\r' '\n' < $i > ${i}_2; done
 ## Fetch 20kbp region at each eQTL site
 
 ```
+python convert_to_bed.py  AJHG_ASE.txt_2
 python convert_to_bed.py AJHG_JOINT.txt_2
+python convert_to_bed.py AJHG_TE.txt_2
 ```
 

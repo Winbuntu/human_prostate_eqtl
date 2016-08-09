@@ -13,14 +13,16 @@ def main(filename):
 	#print filename
 
 	filein = open(filename,"r")
-
+	count = 0
 	for line in islice(filein, 1, None):  
 		elements = line.strip().split("\t")
-		if (int(elements[5])-10000) < 0:
+		#print elements
+		if (float(elements[5])-10000) < 0:
 			print "FUCK"
 			break
 		fileout.write("chr"+elements[4] +"\t" +  str(int(elements[5])-10000) +"\t"+ str(int(elements[5])+10000) + "\t"+ elements[0] +"\t0\t"+ elements[6] + "\n")
-
+		count +=1
+		print count
 
 if __name__ == "__main__":
 	main(sys.argv[1])
